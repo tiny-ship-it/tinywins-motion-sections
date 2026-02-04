@@ -111,6 +111,25 @@ npm run preview
 npm run lint
 ```
 
+### Asset Extraction
+
+Extract visual assets from the Figma design file:
+
+```bash
+# Extract brand cards and hero images from Figma
+npm run extract-figma
+```
+
+**Prerequisites:**
+1. Install and open Figma Desktop App
+2. Open the [TW Website Redesign 2026](https://www.figma.com/design/4debq7ehmp1F7ELO8RZ6yK/TW-Website-Redesign-2026?node-id=319-167) file
+3. Enable "Dev Mode MCP Server" in Figma Preferences
+4. The extraction script will automatically pull screenshots of:
+   - 6 brand cards for the Horizontal Spectrum section
+   - 1 hero image for the Global Feelings Studio section
+
+For detailed instructions, see [FIGMA-ASSET-EXTRACTION.md](./docs/FIGMA-ASSET-EXTRACTION.md)
+
 ## Project Structure
 
 ```
@@ -118,11 +137,14 @@ tinywins-motion-sections/
 ├── docs/                          # Technical PRDs
 │   ├── PRD-01-HORIZONTAL-SPECTRUM.md
 │   ├── PRD-02-TINY-WIN.md
-│   └── PRD-03-GLOBAL-FEELINGS-STUDIO.md
+│   ├── PRD-03-GLOBAL-FEELINGS-STUDIO.md
+│   └── FIGMA-ASSET-EXTRACTION.md # Figma asset extraction guide
 ├── public/                        # Static assets
 │   └── assets/
-│       ├── images/               # Image assets
-│       └── logos/                # Brand logos
+│       ├── brands/               # Brand card images
+│       ├── images/               # Hero and feature images
+│       ├── manifest.json         # Asset metadata (auto-generated)
+│       └── manifest.example.json # Example manifest structure
 ├── src/
 │   ├── components/               # React components
 │   │   ├── HorizontalSpectrum/

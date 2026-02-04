@@ -1,42 +1,60 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.app {
+  width: 100%;
+  min-height: 100vh;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Ensure smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Section spacing */
+section {
+  position: relative;
+  width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1023px) {
+  /* Tablet adjustments */
+  .horizontal-spectrum-section .brand-card {
+    width: 220px;
+    height: 280px;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .image-grid-container {
+    grid-template-columns: repeat(6, 1fr) !important;
+    grid-template-rows: repeat(8, 1fr) !important;
   }
 }
 
-.card {
-  padding: 2em;
+@media (max-width: 767px) {
+  /* Mobile adjustments */
+  .horizontal-spectrum-section .brand-card {
+    width: 180px;
+    height: 240px;
+  }
+
+  .image-grid-container {
+    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-rows: repeat(16, 1fr) !important;
+  }
+
+  .section-title {
+    font-size: 2rem !important;
+  }
+
+  .hero-portrait {
+    width: 80vw !important;
+    height: 60vh !important;
+  }
 }
 
-.read-the-docs {
-  color: #888;
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

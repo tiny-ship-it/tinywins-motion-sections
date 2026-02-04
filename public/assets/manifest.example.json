@@ -1,0 +1,43 @@
+{
+  "extractedAt": "2026-02-04T00:00:00.000Z",
+  "fileKey": "4debq7ehmp1F7ELO8RZ6yK",
+  "figmaFileUrl": "https://www.figma.com/design/4debq7ehmp1F7ELO8RZ6yK/TW-Website-Redesign-2026",
+  "assets": [
+    {
+      "type": "brand-card",
+      "nodeId": "319:636",
+      "name": "gaping-void-card",
+      "description": "Gaping Void brand card",
+      "path": "/absolute/path/to/public/assets/brands/gaping-void-card.png",
+      "relativePath": "public/assets/brands/gaping-void-card.png",
+      "figmaUrl": "https://www.figma.com/design/4debq7ehmp1F7ELO8RZ6yK/TW-Website-Redesign-2026?node-id=319-636"
+    },
+    {
+      "type": "brand-card",
+      "nodeId": "319:678",
+      "name": "tiny-wins-card",
+      "description": "Tiny Wins brand card",
+      "path": "/absolute/path/to/public/assets/brands/tiny-wins-card.png",
+      "relativePath": "public/assets/brands/tiny-wins-card.png",
+      "figmaUrl": "https://www.figma.com/design/4debq7ehmp1F7ELO8RZ6yK/TW-Website-Redesign-2026?node-id=319-678"
+    },
+    {
+      "type": "brand-card",
+      "nodeId": "319:718",
+      "name": "local-feelings-card",
+      "description": "Local Feelings brand card",
+      "path": "/absolute/path/to/public/assets/brands/local-feelings-card.png",
+      "relativePath": "public/assets/brands/local-feelings-card.png",
+      "figmaUrl": "https://www.figma.com/design/4debq7ehmp1F7ELO8RZ6yK/TW-Website-Redesign-2026?node-id=319-718"
+    },
+    {
+      "type": "hero-image",
+      "nodeId": "319:909",
+      "name": "hero-image",
+      "description": "Large full-frame hero image",
+      "path": "/absolute/path/to/public/assets/images/hero-image.png",
+      "relativePath": "public/assets/images/hero-image.png",
+      "figmaUrl": "https://www.figma.com/design/4debq7ehmp1F7ELO8RZ6yK/TW-Website-Redesign-2026?node-id=319-909"
+    }
+  ]
+}
