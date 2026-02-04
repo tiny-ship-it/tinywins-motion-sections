@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { PORTRAITS } from '../../data/portraits';
-import { EmotionalPortrait } from '../../types/globalFeelings';
+import type { EmotionalPortrait } from '../../types/globalFeelings';
 import ImageGrid from './ImageGrid';
 import HeroImage from './HeroImage';
 import ImageModal from './ImageModal';

@@ -1,4 +1,4 @@
-import { EmotionalPortrait } from '../types/globalFeelings';
+import type { EmotionalPortrait } from '../types/globalFeelings';
 
 const EMOTION_CATEGORIES = [
   'Joy', 'Contemplation', 'Determination', 'Serenity', 'Courage',

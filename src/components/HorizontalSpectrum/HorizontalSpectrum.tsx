@@ -18,7 +18,6 @@ const HorizontalSpectrum = () => {
   const [isPaused, setIsPaused] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const cardsContainerRef = useRef<HTMLDivElement>(null);
-  const timelineRef = useRef<gsap.core.Timeline | null>(null);
 
   const currentBrand = BRANDS[currentBrandIndex];
 

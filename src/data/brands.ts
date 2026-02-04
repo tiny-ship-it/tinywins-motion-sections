@@ -1,4 +1,4 @@
-import { BrandCard } from '../types/horizontalSpectrum';
+import type { BrandCard } from '../types/horizontalSpectrum';
 
 export const BRANDS: BrandCard[] = [
   {

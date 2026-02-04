@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { TinyWinInstance, AnimationPhase } from '../../types/tinyWin';
+import type { TinyWinInstance, AnimationPhase } from '../../types/tinyWin';
 import { generateInstances, FIRST_WAVE_POSITIONS } from './instanceGenerator';
 
 gsap.registerPlugin(ScrollTrigger);

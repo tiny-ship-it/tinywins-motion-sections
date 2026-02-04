@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import { EmotionalPortrait } from '../../types/globalFeelings';
+import type { EmotionalPortrait } from '../../types/globalFeelings';
 import GridImage from './GridImage';
 
 interface ImageGridProps {

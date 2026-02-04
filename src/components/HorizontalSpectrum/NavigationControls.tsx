@@ -15,7 +15,6 @@ const NavigationControls = ({
   isPaused,
   onTogglePause,
   currentBrand,
-  totalBrands,
 }: NavigationControlsProps) => {
   const prevButtonRef = useRef<HTMLButtonElement>(null);
   const nextButtonRef = useRef<HTMLButtonElement>(null);

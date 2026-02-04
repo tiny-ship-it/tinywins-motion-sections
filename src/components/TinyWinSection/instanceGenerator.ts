@@ -1,4 +1,4 @@
-import { TinyWinInstance } from '../../types/tinyWin';
+import type { TinyWinInstance } from '../../types/tinyWin';
 
 export const FIRST_WAVE_POSITIONS = [
   { x: 50, y: 50 },  // original

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import { EmotionWord } from '../../types/horizontalSpectrum';
+import type { EmotionWord } from '../../types/horizontalSpectrum';
 
 interface EmotionWordsStreamProps {
   words: string[];

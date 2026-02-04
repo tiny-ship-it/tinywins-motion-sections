@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { BrandCard as BrandCardType } from '../../types/horizontalSpectrum';
+import type { BrandCard as BrandCardType } from '../../types/horizontalSpectrum';
 
 interface BrandCardProps {
   brand: BrandCardType;

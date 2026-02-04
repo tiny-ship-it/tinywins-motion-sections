@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import gsap from 'gsap';
-import { EmotionalPortrait } from '../../types/globalFeelings';
+import type { EmotionalPortrait } from '../../types/globalFeelings';
 
 interface GridImageProps {
   portrait: EmotionalPortrait;
@@ -8,7 +8,7 @@ interface GridImageProps {
   onClick: () => void;
 }
 
-const GridImage = ({ portrait, index, onClick }: GridImageProps) => {
+const GridImage = ({ portrait, onClick }: GridImageProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const imageRef = useRef<HTMLDivElement>(null);
 
