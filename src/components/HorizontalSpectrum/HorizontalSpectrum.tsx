@@ -118,10 +118,12 @@ const HorizontalSpectrum = () => {
         />
       </div>
 
-      {/* Bottom Indicator Section */}
-      <div className="flex-none z-20 bg-white pt-8 pb-16">
-        {/* Waveform Indicator */}
-        <div className="flex justify-center">
+      {/* Bottom Indicator Section - 56px from bottom */}
+      <div 
+        className="absolute left-0 right-0 w-full z-20"
+        style={{ bottom: '56px' }}
+      >
+        <div className="flex justify-center w-full">
           <WaveformIndicator activeIndex={activeIndex} totalItems={BRANDS.length} />
         </div>
       </div>

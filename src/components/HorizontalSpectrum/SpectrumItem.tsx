@@ -14,7 +14,6 @@ interface SpectrumItemProps {
 const SpectrumItem = ({ brand, index, distFromHover, onHover, onMouseMove }: SpectrumItemProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
-  const textRef = useRef<HTMLDivElement>(null);
   const prevShowsImageRef = useRef<boolean>(false);
 
   // Track mouse movement within this card
@@ -47,9 +46,6 @@ const SpectrumItem = ({ brand, index, distFromHover, onHover, onMouseMove }: Spe
 
   const { width, height } = getDimensions();
 
-  // Calculate the Y offset for word cards (needs to be animated, not static)
-  const yOffset = !showsImage ? -12 : 0;
-
   // Track if this is the first render
   const isFirstRenderRef = useRef(true);
 
@@ -62,21 +58,20 @@ const SpectrumItem = ({ brand, index, distFromHover, onHover, onMouseMove }: Spe
 
     if (isFirstRenderRef.current) {
       // First render: set immediately without animation
-      gsap.set(containerRef.current, { width, height, y: yOffset });
+      gsap.set(containerRef.current, { width, height });
       isFirstRenderRef.current = false;
     } else {
       // Subsequent changes: animate smoothly
       gsap.to(containerRef.current, {
         width: width,
         height: height,
-        y: yOffset,
         duration: 0.4,
         ease: 'power2.out',
       });
     }
 
     prevShowsImageRef.current = showsImage;
-  }, [width, height, showsImage, yOffset]); // Triggers on ANY dimension/position change
+  }, [width, height, showsImage]); // Triggers on ANY dimension change
 
   // Animate image scale
   useEffect(() => {
@@ -90,30 +85,6 @@ const SpectrumItem = ({ brand, index, distFromHover, onHover, onMouseMove }: Spe
     }
   }, [isHovered, showsImage]);
 
-  // Animate text with delay - just fade, no slide
-  useEffect(() => {
-    if (!textRef.current) return;
-
-    gsap.killTweensOf(textRef.current);
-
-    if (isHovered) {
-      gsap.fromTo(textRef.current,
-        { opacity: 0 },
-        { 
-          opacity: 1,
-          duration: 0.2, // Double speed (was 0.4)
-          delay: 0.3,
-          ease: 'power2.out'
-        }
-      );
-    } else {
-      gsap.to(textRef.current, {
-        opacity: 0,
-        duration: 0.1,
-        ease: 'power2.in',
-      });
-    }
-  }, [isHovered]);
 
   return (
     <div
@@ -165,14 +136,12 @@ const SpectrumItem = ({ brand, index, distFromHover, onHover, onMouseMove }: Spe
             />
           </div>
 
-          {/* Text Below Image (only on hovered card) */}
+          {/* Text Below Image (only on hovered card) - positioned absolutely to prevent layout shift */}
+          {isHovered && (
           <div 
-            ref={textRef}
-            className="w-full bg-white px-3 flex-shrink-0"
+            className="absolute left-0 right-0 bg-white px-3"
             style={{ 
-              opacity: 0,
-              height: isHovered ? 'auto' : '0px',
-              overflow: 'hidden',
+              top: '100%',
               paddingTop: '18px',
               paddingBottom: '8px'
             }}
@@ -190,6 +159,7 @@ const SpectrumItem = ({ brand, index, distFromHover, onHover, onMouseMove }: Spe
               <span style={{ opacity: 0.3 }}>{brand.description}</span>
             </p>
           </div>
+          )}
         </>
       )}
     </div>
