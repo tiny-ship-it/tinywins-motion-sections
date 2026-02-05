@@ -1,37 +1,33 @@
-import type { BrandCard } from '../types/horizontalSpectrum';
+export interface BrandCard {
+  name: string;
+  emotionalState: string;
+  logoUrl: string;
+  imageUrl: string;
+  accentColor: string;
+  description: string;
+}
 
-export const BRANDS: BrandCard[] = [
-  {
-    name: 'Gaping Void',
-    emotionalState: 'Irresistible',
-    logoUrl: 'https://via.placeholder.com/280x360/FF6B6B/FFFFFF?text=Gaping+Void',
-    accentColor: '#FF6B6B',
-    emotionWords: [
-      'bold', 'creative', 'brave', 'daring', 'innovative',
-      'fearless', 'artistic', 'visionary', 'original', 'authentic'
-    ],
-    position: { x: -400, scale: 0.85 }
-  },
-  {
-    name: 'Tiny Wins',
-    emotionalState: 'Unstoppable',
-    logoUrl: 'https://via.placeholder.com/280x360/4ECDC4/FFFFFF?text=Tiny+Wins',
-    accentColor: '#4ECDC4',
-    emotionWords: [
-      'persistent', 'determined', 'resilient', 'focused', 'driven',
-      'consistent', 'dedicated', 'committed', 'steadfast', 'tenacious'
-    ],
-    position: { x: 0, scale: 1.0 }
-  },
-  {
-    name: 'Local Feelings',
-    emotionalState: 'Untouchable',
-    logoUrl: 'https://via.placeholder.com/280x360/95E1D3/FFFFFF?text=Local+Feelings',
-    accentColor: '#95E1D3',
-    emotionWords: [
-      'confident', 'powerful', 'strong', 'assured', 'invincible',
-      'secure', 'protected', 'empowered', 'unshakeable', 'solid'
-    ],
-    position: { x: 400, scale: 0.85 }
-  }
+// Generate all 18 brands based on Figma design
+const EMOTIONS = [
+  'Unstoppable', 'Irresistible', 'Untouchable', 'Visionary', 'Balanced', 'Powerful',
+  'Innovative', 'Resonant', 'Structured', 'Radiant', 'Grounded', 'Fast',
+  'Light', 'Reliable', 'Alive', 'Driven', 'Adaptive', 'Essential'
 ];
+
+const ACCENT_COLORS = [
+  '#4ECDC4', '#FF6B6B', '#95E1D3', '#5D9CEC', '#AC92EC', '#DA4453',
+  '#F6BB42', '#37BC9B', '#4A89DC', '#FFCE54', '#8CC152', '#E9573F',
+  '#3BAFDA', '#656D78', '#D770AD', '#967ADC', '#48CFAD', '#AAB2BD'
+];
+
+export const BRANDS: BrandCard[] = EMOTIONS.map((emotion, i) => {
+  const imgNum = (i % 16) + 1;
+  return {
+    name: 'Project Name',
+    emotionalState: emotion,
+    logoUrl: '',
+    imageUrl: `/assets/images/img-${imgNum.toString().padStart(2, '0')}.jpg`,
+    accentColor: ACCENT_COLORS[i],
+    description: 'the big feeling',
+  };
+});
